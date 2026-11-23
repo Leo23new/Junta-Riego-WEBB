@@ -1,0 +1,2 @@
+# Estructura
+Un solo proyecto: src/ con páginas por rol y por módulo, componentes compartidos y un cliente de Supabase. supabase/migrations/ contiene el esquema SQL y las políticas RLS. scripts/ contiene el script de datos de prueba.

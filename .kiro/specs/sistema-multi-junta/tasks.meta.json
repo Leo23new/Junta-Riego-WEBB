@@ -1,0 +1,149 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1. Scaffolding del proyecto y configuración base": [
+      {
+        "executionId": "79111dfc-997c-444f-a328-6bd417796ca0",
+        "chatSessionId": "sess_bb5c9059-56da-4f92-aba3-b22c4accf9b6",
+        "timestamp": 1795466871104
+      },
+      {
+        "executionId": "79111dfc-997c-444f-a328-6bd417796ca0",
+        "chatSessionId": "sess_bb5c9059-56da-4f92-aba3-b22c4accf9b6",
+        "timestamp": 1795467098013
+      }
+    ],
+    "2. Migración SQL única — esquema completo": [
+      {
+        "executionId": "a30e0e09-3c8e-49a6-85d7-2d5fc841c9e3",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795467236744
+      },
+      {
+        "executionId": "a30e0e09-3c8e-49a6-85d7-2d5fc841c9e3",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795467395413
+      }
+    ],
+    "3. Script de datos semilla": [
+      {
+        "executionId": "57cc39d6-655b-49c4-a8e2-50fb2a3d708c",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795468029908
+      },
+      {
+        "executionId": "57cc39d6-655b-49c4-a8e2-50fb2a3d708c",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795468406249
+      }
+    ],
+    "4. Autenticación y rutas protegidas": [
+      {
+        "executionId": "a8b669cc-fdc8-4d2c-b30a-c24b53f41614",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795469054242
+      },
+      {
+        "executionId": "a8b669cc-fdc8-4d2c-b30a-c24b53f41614",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795469354272
+      }
+    ],
+    "5. Layout base y componentes UI reutilizables": [
+      {
+        "executionId": "0f14e45a-0234-4161-b3e6-27491d98fe3e",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795470928563
+      },
+      {
+        "executionId": "0f14e45a-0234-4161-b3e6-27491d98fe3e",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795471100970
+      }
+    ],
+    "6. RF-01 — Registrar juntas (Super Administrador)": [
+      {
+        "executionId": "07cb50ac-55c5-4429-85ef-bf6a39694e51",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795471517369
+      },
+      {
+        "executionId": "07cb50ac-55c5-4429-85ef-bf6a39694e51",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795471655117
+      }
+    ],
+    "7. RF-04 — Asignar Administrador de la Junta (Super Administrador)": [
+      {
+        "executionId": "f33a463a-86ad-41e1-9337-57b6ad32006b",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795471714847
+      },
+      {
+        "executionId": "f33a463a-86ad-41e1-9337-57b6ad32006b",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795471799670
+      }
+    ],
+    "8. RF-02 — Configurar datos generales y sectores (Administrador)": [
+      {
+        "executionId": "ebc94997-234c-4f6d-aca3-76c04dac988d",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795471835522
+      },
+      {
+        "executionId": "ebc94997-234c-4f6d-aca3-76c04dac988d",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795471951941
+      }
+    ],
+    "9. RF-05 — Administrar cuentas de miembros (Administrador)": [
+      {
+        "executionId": "96c59c9a-c07f-4e8b-980f-b88b106f819c",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795471997121
+      },
+      {
+        "executionId": "96c59c9a-c07f-4e8b-980f-b88b106f819c",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795472396992
+      }
+    ],
+    "10. RF-07 — Nómina de miembros (Secretario)": [
+      {
+        "executionId": "cdd80c15-d3a4-4c7d-9d26-bb05791fcf84",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795472455801
+      },
+      {
+        "executionId": "cdd80c15-d3a4-4c7d-9d26-bb05791fcf84",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795472584956
+      }
+    ],
+    "11. RF-08 — Asistencia a asambleas (Secretario)": [
+      {
+        "executionId": "50f8c5f5-66c8-46e9-b1ef-1d6a6a157192",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795472766438
+      },
+      {
+        "executionId": "50f8c5f5-66c8-46e9-b1ef-1d6a6a157192",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795472908517
+      }
+    ],
+    "12. RF-10/RF-11 — Predios y recursos de miembros (Secretario)": [
+      {
+        "executionId": "e27d5ba9-f353-4c9c-b754-248502cd4900",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795473179636
+      },
+      {
+        "executionId": "e27d5ba9-f353-4c9c-b754-248502cd4900",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795473214386
+      }
+    ]
+  }
+}
