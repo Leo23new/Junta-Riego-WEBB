@@ -144,6 +144,184 @@
         "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
         "timestamp": 1795473214386
       }
+    ],
+    "13. RF-13 — Registrar ingresos (Tesorero)": [
+      {
+        "executionId": "4eaa6bf2-b476-490a-8b70-63ca4539942c",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795473803027
+      },
+      {
+        "executionId": "4eaa6bf2-b476-490a-8b70-63ca4539942c",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795473824184
+      },
+      {
+        "executionId": "4eaa6bf2-b476-490a-8b70-63ca4539942c",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795473827025
+      },
+      {
+        "executionId": "4eaa6bf2-b476-490a-8b70-63ca4539942c",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795473896762
+      }
+    ],
+    "14. RF-15 — Multas por inasistencia (Tesorero)": [
+      {
+        "executionId": "aa067db2-b269-4478-8f10-6cf45a871897",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795473925564
+      },
+      {
+        "executionId": "aa067db2-b269-4478-8f10-6cf45a871897",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795474018235
+      }
+    ],
+    "15. RF-16 — Registrar egresos (Tesorero)": [
+      {
+        "executionId": "b3184c4a-0234-47fb-8f70-78c34fb8c276",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795474149233
+      },
+      {
+        "executionId": "b3184c4a-0234-47fb-8f70-78c34fb8c276",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795474210360
+      }
+    ],
+    "16. RF-32 — Consulta individual del Miembro": [
+      {
+        "executionId": "aa174fca-4b1f-43ca-905e-a46d87110a64",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795474231076
+      },
+      {
+        "executionId": "aa174fca-4b1f-43ca-905e-a46d87110a64",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795474340872
+      }
+    ],
+    "17. Verificación de aislamiento entre juntas": [
+      {
+        "executionId": "fea9df2f-dc48-47e5-b6a7-c5f8690ef122",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795474436698
+      },
+      {
+        "executionId": "fea9df2f-dc48-47e5-b6a7-c5f8690ef122",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795474804973
+      }
+    ],
+    "18. RF-09 — Asistencia a mingas (Secretario)": [
+      {
+        "executionId": "2d14c500-3b81-48e1-a773-1ddb32414f9b",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795474905613
+      },
+      {
+        "executionId": "2d14c500-3b81-48e1-a773-1ddb32414f9b",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795474991587
+      }
+    ],
+    "19. RF-12 — Calendario semanal y horarios (Secretario)": [
+      {
+        "executionId": "1d57ccbf-5970-420d-9bfe-fe6f2ae60261",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795475048537
+      },
+      {
+        "executionId": "1d57ccbf-5970-420d-9bfe-fe6f2ae60261",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795475452039
+      }
+    ],
+    "20. RF-20 — Gestionar comprobantes de pago (Tesorero)": [
+      {
+        "executionId": "d1821fe8-50cf-42a8-b9ce-f4243248a257",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795475581266
+      },
+      {
+        "executionId": "d1821fe8-50cf-42a8-b9ce-f4243248a257",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795475663031
+      }
+    ],
+    "21. RF-21 — Gestionar inventario (Tesorero)": [
+      {
+        "executionId": "32b6799c-94b4-4845-9b79-90e43c4869e4",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795475857430
+      },
+      {
+        "executionId": "32b6799c-94b4-4845-9b79-90e43c4869e4",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795475953428
+      }
+    ],
+    "22. RF-22 — Activos fijos (Tesorero)": [
+      {
+        "executionId": "f4a0deb5-dd6b-49b0-9fa2-e8de6934283b",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795475989541
+      },
+      {
+        "executionId": "f4a0deb5-dd6b-49b0-9fa2-e8de6934283b",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795476088267
+      }
+    ],
+    "23. RF-24 — Reportes económicos (Tesorero)": [
+      {
+        "executionId": "866c91a3-cfbf-4985-822b-d6d83ff5065d",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795480816109
+      },
+      {
+        "executionId": "866c91a3-cfbf-4985-822b-d6d83ff5065d",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795480829510
+      }
+    ],
+    "24. RF-25 — Convocatorias (Secretario)": [
+      {
+        "executionId": "95279568-15ec-42aa-b6cb-756e2c237bf5",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795480977528
+      },
+      {
+        "executionId": "95279568-15ec-42aa-b6cb-756e2c237bf5",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795481349990
+      }
+    ],
+    "25. RF-26 — Actas y resoluciones (Secretario)": [
+      {
+        "executionId": "4428fa94-161b-4584-b0e1-55cef43e1c90",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795481399216
+      },
+      {
+        "executionId": "4428fa94-161b-4584-b0e1-55cef43e1c90",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795481483467
+      }
+    ],
+    "26. RF-29 — Comunicaciones externas (Secretario)": [
+      {
+        "executionId": "79d68044-67b6-4ef3-af62-692f65d3d3ec",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795481523583
+      },
+      {
+        "executionId": "79d68044-67b6-4ef3-af62-692f65d3d3ec",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795481590811
+      }
     ]
   }
 }

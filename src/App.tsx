@@ -11,7 +11,24 @@ import Sectores from './pages/admin/Sectores'
 import Cuentas from './pages/admin/Cuentas'
 import Miembros from './pages/secretario/Miembros'
 import Asambleas from './pages/secretario/Asambleas'
+import Mingas from './pages/secretario/Mingas'
 import Predios from './pages/secretario/Predios'
+import Horarios from './pages/secretario/Horarios'
+import Ingresos from './pages/tesorero/Ingresos'
+import Multas from './pages/tesorero/Multas'
+import Egresos from './pages/tesorero/Egresos'
+import Inventario from './pages/tesorero/Inventario'
+import ActivosFijos from './pages/tesorero/ActivosFijos'
+import Comprobantes from './pages/tesorero/Comprobantes'
+import Reportes from './pages/tesorero/Reportes'
+import MiInformacion from './pages/miembro/MiInformacion'
+import MisPagos from './pages/miembro/MisPagos'
+import MisMultas from './pages/miembro/MisMultas'
+import MisPredios from './pages/miembro/MisPredios'
+import Convocatorias from './pages/miembro/Convocatorias'
+import ConvocatoriasSecretario from './pages/secretario/Convocatorias'
+import Actas from './pages/secretario/Actas'
+import Comunicaciones from './pages/secretario/Comunicaciones'
 
 const Placeholder = ({ titulo }: { titulo: string }) => (
   <div className="p-8 text-gray-500">{titulo} — próximamente</div>
@@ -48,35 +65,36 @@ function App() {
           <Route element={<AppShell />}>
             <Route path="/secretario/miembros" element={<Miembros />} />
             <Route path="/secretario/asambleas" element={<Asambleas />} />
+            <Route path="/secretario/mingas" element={<Mingas />} />
             <Route path="/secretario/predios" element={<Predios />} />
-            <Route path="/secretario/horarios" element={<Placeholder titulo="Horarios" />} />
-            <Route path="/secretario/convocatorias" element={<Placeholder titulo="Convocatorias" />} />
-            <Route path="/secretario/actas" element={<Placeholder titulo="Actas" />} />
-            <Route path="/secretario/comunicaciones" element={<Placeholder titulo="Comunicaciones" />} />
+            <Route path="/secretario/horarios" element={<Horarios />} />
+            <Route path="/secretario/convocatorias" element={<ConvocatoriasSecretario />} />
+            <Route path="/secretario/actas" element={<Actas />} />
+            <Route path="/secretario/comunicaciones" element={<Comunicaciones />} />
           </Route>
         </Route>
 
         {/* Tesorero */}
         <Route element={<ProtectedRoute rolesPermitidos={['tesorero', 'admin', 'super_admin']} />}>
           <Route element={<AppShell />}>
-            <Route path="/tesorero/ingresos" element={<Placeholder titulo="Ingresos" />} />
-            <Route path="/tesorero/multas" element={<Placeholder titulo="Multas" />} />
-            <Route path="/tesorero/egresos" element={<Placeholder titulo="Egresos" />} />
-            <Route path="/tesorero/inventario" element={<Placeholder titulo="Inventario" />} />
-            <Route path="/tesorero/activos" element={<Placeholder titulo="Activos" />} />
-            <Route path="/tesorero/reportes" element={<Placeholder titulo="Reportes" />} />
-            <Route path="/tesorero/comprobantes" element={<Placeholder titulo="Comprobantes" />} />
+            <Route path="/tesorero/ingresos" element={<Ingresos />} />
+            <Route path="/tesorero/multas" element={<Multas />} />
+            <Route path="/tesorero/egresos" element={<Egresos />} />
+            <Route path="/tesorero/inventario" element={<Inventario />} />
+            <Route path="/tesorero/activos" element={<ActivosFijos />} />
+            <Route path="/tesorero/reportes" element={<Reportes />} />
+            <Route path="/tesorero/comprobantes" element={<Comprobantes />} />
           </Route>
         </Route>
 
         {/* Miembro */}
         <Route element={<ProtectedRoute rolesPermitidos={['miembro', 'secretario', 'admin', 'super_admin']} />}>
           <Route element={<AppShell />}>
-            <Route path="/miembro/informacion" element={<Placeholder titulo="Mi información" />} />
-            <Route path="/miembro/pagos" element={<Placeholder titulo="Mis pagos" />} />
-            <Route path="/miembro/multas" element={<Placeholder titulo="Mis multas" />} />
-            <Route path="/miembro/predios" element={<Placeholder titulo="Mis predios" />} />
-            <Route path="/miembro/convocatorias" element={<Placeholder titulo="Convocatorias" />} />
+            <Route path="/miembro/informacion" element={<MiInformacion />} />
+            <Route path="/miembro/pagos" element={<MisPagos />} />
+            <Route path="/miembro/multas" element={<MisMultas />} />
+            <Route path="/miembro/predios" element={<MisPredios />} />
+            <Route path="/miembro/convocatorias" element={<Convocatorias />} />
           </Route>
         </Route>
 

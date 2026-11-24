@@ -28,10 +28,12 @@ const navPorRol: Record<Rol, NavItem[]> = {
     { label: 'Ingresos', to: '/tesorero/ingresos' },
     { label: 'Multas', to: '/tesorero/multas' },
     { label: 'Egresos', to: '/tesorero/egresos' },
+    { label: 'Reportes', to: '/tesorero/reportes' },
   ],
   secretario: [
     { label: 'Miembros', to: '/secretario/miembros' },
     { label: 'Asambleas', to: '/secretario/asambleas' },
+    { label: 'Mingas', to: '/secretario/mingas' },
     { label: 'Predios', to: '/secretario/predios' },
     { label: 'Horarios', to: '/secretario/horarios' },
     { label: 'Convocatorias', to: '/secretario/convocatorias' },

@@ -8,7 +8,7 @@ import { supabase } from '../../lib/supabase'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
-type EstadoAsamblea = 'programada' | 'en_curso' | 'cerrada'
+type EstadoAsamblea = 'abierta' | 'cerrada'
 type EstadoAsistencia = 'presente' | 'ausente_justificado' | 'ausente'
 
 interface Asamblea {
@@ -53,8 +53,7 @@ function formatFecha(fecha: string): string {
 
 function BadgeEstadoAsamblea({ estado }: { estado: EstadoAsamblea }) {
   const map: Record<EstadoAsamblea, { label: string; clase: string }> = {
-    programada: { label: 'Programada', clase: 'bg-blue-100 text-blue-700' },
-    en_curso: { label: 'En curso', clase: 'bg-yellow-100 text-yellow-700' },
+    abierta: { label: 'Abierta', clase: 'bg-blue-100 text-blue-700' },
     cerrada: { label: 'Cerrada', clase: 'bg-green-100 text-green-700' },
   }
   const { label, clase } = map[estado]
@@ -210,7 +209,7 @@ export default function Asambleas() {
         hora: nuevaHora,
         lugar: nuevaLugar.trim(),
         orden_del_dia: nuevaOrden.trim(),
-        estado: 'programada',
+        estado: 'abierta',
         creado_por: usuario?.id ?? null,
       })
       .select()

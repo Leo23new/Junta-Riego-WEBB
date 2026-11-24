@@ -110,7 +110,7 @@ Cada tarea produce código funcional e integrado; no existe código huérfano. L
   - Integrar `SubidaArchivo.tsx` para subir imágenes al bucket `predios-imagenes`: validar tipo (JPG/PNG/WEBP) y tamaño (máx. 5 MB) antes de llamar a `supabase.storage.upload()` (RF-11.4, RF-11.5).
   - _Requisitos: RF-10, RF-11_
 
-- [ ] 13. RF-13 — Registrar ingresos (Tesorero)
+- [x] 13. RF-13 — Registrar ingresos (Tesorero)
   - Crear `src/pages/tesorero/Ingresos.tsx` con:
     - Formulario: miembro_id, concepto, monto, fecha, metodo_pago.
     - Generación automática de `numero_recibo` único por junta verificando unicidad en `ingresos` antes de insertar (RF-13.2).
@@ -118,7 +118,7 @@ Cada tarea produce código funcional e integrado; no existe código huérfano. L
     - Filtros por miembro, concepto, rango de fechas y método de pago.
   - _Requisitos: RF-13_
 
-- [ ] 14. RF-15 — Multas por inasistencia (Tesorero)
+- [x] 14. RF-15 — Multas por inasistencia (Tesorero)
   - Crear `src/pages/tesorero/Multas.tsx` con:
     - Generación automática de un registro en `multas` (estado `pendiente`) por cada `asistencia_asambleas` o `asistencia_mingas` con `susceptible_multa = true` al cerrar el evento (RF-15.1); el monto se lee de `tabla_sanciones` según `tipo_evento` (RF-15.2).
     - Vista de revisión para que el Tesorero confirme o anule cada multa pendiente (RF-15.3).
@@ -126,14 +126,14 @@ Cada tarea produce código funcional e integrado; no existe código huérfano. L
     - Resumen de multas pendientes y pagadas filtrable por miembro y período.
   - _Requisitos: RF-15_
 
-- [ ] 15. RF-16 — Registrar egresos (Tesorero)
+- [x] 15. RF-16 — Registrar egresos (Tesorero)
   - Crear `src/pages/tesorero/Egresos.tsx` con:
     - Formulario: categoría, proveedor, descripción, monto, fecha, metodo_pago.
     - Integrar `SubidaArchivo.tsx` para subida de comprobante (JPG/PNG/PDF, máx. 10 MB) al bucket `comprobantes`.
     - Filtros por categoría, proveedor, rango de fechas y monto.
   - _Requisitos: RF-16_
 
-- [ ] 16. RF-32 — Consulta individual del Miembro
+- [x] 16. RF-32 — Consulta individual del Miembro
   - Crear `src/pages/miembro/MiInformacion.tsx` con datos personales del miembro autenticado.
   - Crear `src/pages/miembro/MisPagos.tsx` con historial de pagos (fecha, concepto, monto).
   - Crear `src/pages/miembro/MisMultas.tsx` con multas pendientes y pagadas del miembro.
@@ -142,7 +142,7 @@ Cada tarea produce código funcional e integrado; no existe código huérfano. L
   - Las políticas RLS garantizan que cada consulta retorne únicamente los registros del miembro autenticado.
   - _Requisitos: RF-32_
 
-- [ ] 17. Verificación de aislamiento entre juntas
+- [x] 17. Verificación de aislamiento entre juntas
   - Crear `scripts/verify-isolation.mjs` que, usando credenciales de dos usuarios de juntas distintas obtenidas de variables de entorno, consulte directamente la API REST de Supabase con el JWT de cada usuario e intente leer registros de la junta opuesta en las tablas `miembros`, `ingresos` y `predios`.
   - El script verifica que cada consulta retorne 0 filas o un error 403, e imprime `PASS` o `FAIL` por cada verificación.
   - _Requisitos: RNF-01_
@@ -151,12 +151,12 @@ Cada tarea produce código funcional e integrado; no existe código huérfano. L
 
 ### Fase 2 — Funcionalidades adicionales (OPCIONAL)
 
-- [ ] 18. RF-09 — Asistencia a mingas (Secretario)
+- [x] 18. RF-09 — Asistencia a mingas (Secretario)
   - Crear `src/pages/secretario/Mingas.tsx` siguiendo el mismo flujo que la tarea 11 (Asambleas) pero para mingas: campos adicionales `actividad` y `min_participantes`.
   - Generar lista de asistencia automática, marcar ausencias y calcular porcentaje de participación al cerrar.
   - _Requisitos: RF-09_
 
-- [ ] 19. RF-12 — Calendario semanal y horarios (Secretario)
+- [x] 19. RF-12 — Calendario semanal y horarios (Secretario)
   - Crear `src/pages/secretario/Horarios.tsx` con:
     - Vista cuadrícula semanal (7 columnas × franjas horarias) con bloques asignados por servicio.
     - Formulario para crear bloque: miembro_id, servicio, dia_semana (1–7), hora_inicio, hora_fin.
@@ -164,7 +164,7 @@ Cada tarea produce código funcional e integrado; no existe código huérfano. L
     - Edición y eliminación de bloques existentes.
   - _Requisitos: RF-12_
 
-- [ ] 20. RF-20 — Gestionar comprobantes de pago (Tesorero)
+- [x] 20. RF-20 — Gestionar comprobantes de pago (Tesorero)
   - Crear `src/pages/tesorero/Comprobantes.tsx` con:
     - Listado de comprobantes vinculados a ingresos y egresos.
     - Integrar `SubidaArchivo.tsx` para subida de comprobante (JPG/PNG/PDF, máx. 10 MB) con validación de tipo y tamaño antes del upload.
@@ -172,7 +172,7 @@ Cada tarea produce código funcional e integrado; no existe código huérfano. L
     - Eliminación del archivo en Supabase Storage y desvinculación del registro financiero (RF-20.5).
   - _Requisitos: RF-20_
 
-- [ ] 21. RF-21 — Gestionar inventario (Tesorero)
+- [x] 21. RF-21 — Gestionar inventario (Tesorero)
   - Crear `src/pages/tesorero/Inventario.tsx` con:
     - CRUD de artículos: código, nombre, unidad de medida, stock_minimo, categoría.
     - Formulario de movimiento (entrada/salida): artículo, cantidad, fecha, motivo.
@@ -180,7 +180,7 @@ Cada tarea produce código funcional e integrado; no existe código huérfano. L
     - Listado de artículos con stock actual actualizado.
   - _Requisitos: RF-21_
 
-- [ ] 22. RF-22 — Activos fijos (Tesorero)
+- [x] 22. RF-22 — Activos fijos (Tesorero)
   - Crear `src/pages/tesorero/ActivosFijos.tsx` con:
     - CRUD de activos fijos: código, nombre, descripción, valor_adquisicion, fecha_adquisicion, vida_util_anos, estado.
     - Mostrar depreciación acumulada calculada con `calcular_depreciacion()` en el detalle de cada activo (RF-22.3).
@@ -188,7 +188,7 @@ Cada tarea produce código funcional e integrado; no existe código huérfano. L
     - Filtros por estado y categoría.
   - _Requisitos: RF-22_
 
-- [ ] 23. RF-24 — Reportes económicos (Tesorero)
+- [x] 23. RF-24 — Reportes económicos (Tesorero)
   - Crear `src/pages/tesorero/Reportes.tsx` con:
     - Reporte de Balance General (activos, pasivos, patrimonio) para un período seleccionado.
     - Reporte de Ingresos y Egresos detallado por categoría y período.
@@ -197,7 +197,7 @@ Cada tarea produce código funcional e integrado; no existe código huérfano. L
     - El Administrador también puede visualizar todos los reportes de su junta (RF-24.6).
   - _Requisitos: RF-24_
 
-- [ ] 24. RF-25 — Convocatorias (Secretario)
+- [x] 24. RF-25 — Convocatorias (Secretario)
   - Crear `src/pages/secretario/Convocatorias.tsx` con:
     - Formulario de nueva convocatoria: tipo (asamblea/minga), título, fecha, hora, lugar, orden del día, plazo de confirmación.
     - Al publicar, insertar un registro en `notificaciones` por cada miembro activo de la junta (RF-25.2).
@@ -205,7 +205,7 @@ Cada tarea produce código funcional e integrado; no existe código huérfano. L
     - Marcar convocatoria como `finalizada` cuando su fecha sea anterior a la fecha actual (RF-25.5).
   - _Requisitos: RF-25_
 
-- [ ] 25. RF-26 — Actas y resoluciones (Secretario)
+- [x] 25. RF-26 — Actas y resoluciones (Secretario)
   - Crear `src/pages/secretario/Actas.tsx` con:
     - Integrar `SubidaArchivo.tsx` para subir actas (PDF/DOCX) al bucket `documentos-actas`, asociadas a una asamblea, con título, fecha y descripción.
     - Al publicar un acta (`publicada = true`), hacerla visible a todos los usuarios activos de la junta (RF-26.2).
