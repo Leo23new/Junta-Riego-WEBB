@@ -344,6 +344,18 @@
         "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
         "timestamp": 1795482754040
       }
+    ],
+    "28. RNF-03 — Exportación manual de datos (Administrador)": [
+      {
+        "executionId": "a7bb6760-3792-41bc-bc6e-c5e3a2fdaa53",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795514102336
+      },
+      {
+        "executionId": "a7bb6760-3792-41bc-bc6e-c5e3a2fdaa53",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795514199167
+      }
     ]
   }
 }

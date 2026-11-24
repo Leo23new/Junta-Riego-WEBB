@@ -5,6 +5,27 @@ import { Formulario, CampoFormulario } from '../../components/ui/Formulario'
 import { Boton } from '../../components/ui/Boton'
 import { Alerta } from '../../components/ui/Alerta'
 import { SubidaArchivo } from '../../components/ui/SubidaArchivo'
+import { descargarCSV } from '../../lib/exportarCSV'
+
+const TABLAS_EXPORTAR = [
+  { tabla: 'miembros', label: 'Miembros' },
+  { tabla: 'sectores', label: 'Sectores' },
+  { tabla: 'asambleas', label: 'Asambleas' },
+  { tabla: 'asistencia_asambleas', label: 'Asistencia asambleas' },
+  { tabla: 'mingas', label: 'Mingas' },
+  { tabla: 'asistencia_mingas', label: 'Asistencia mingas' },
+  { tabla: 'predios', label: 'Predios' },
+  { tabla: 'ingresos', label: 'Ingresos' },
+  { tabla: 'egresos', label: 'Egresos' },
+  { tabla: 'multas', label: 'Multas' },
+  { tabla: 'inventario_articulos', label: 'Inventario — artículos' },
+  { tabla: 'inventario_movimientos', label: 'Inventario — movimientos' },
+  { tabla: 'activos_fijos', label: 'Activos fijos' },
+  { tabla: 'convocatorias', label: 'Convocatorias' },
+  { tabla: 'actas', label: 'Actas' },
+  { tabla: 'resoluciones', label: 'Resoluciones' },
+  { tabla: 'comunicaciones_externas', label: 'Comunicaciones externas' },
+]
 
 interface Junta {
   id: string
@@ -41,6 +62,11 @@ export default function Configuracion() {
   const [alerta, setAlerta] = useState<{ tipo: 'exito' | 'error'; mensaje: string } | null>(null)
   const [alertaLogo, setAlertaLogo] = useState<{ tipo: 'exito' | 'error'; mensaje: string } | null>(null)
   const [errores, setErrores] = useState<Partial<Record<keyof Junta, string>>>({})
+  const [tablasSeleccionadas, setTablasSeleccionadas] = useState<Set<string>>(
+    new Set(TABLAS_EXPORTAR.map((t) => t.tabla))
+  )
+  const [exportando, setExportando] = useState(false)
+  const [alertaExport, setAlertaExport] = useState<{ tipo: 'exito' | 'error'; mensaje: string } | null>(null)
 
   // Form state
   const [nombre, setNombre] = useState('')
@@ -163,6 +189,42 @@ export default function Configuracion() {
       setJunta((prev) => prev ? { ...prev, logo_url: publicUrl } : prev)
       setAlertaLogo({ tipo: 'exito', mensaje: 'Logo actualizado correctamente.' })
     }
+  }
+
+  async function handleExportar() {
+    if (tablasSeleccionadas.size === 0 || !juntaId) return
+    setExportando(true)
+    setAlertaExport(null)
+    let erroresExport = 0
+
+    for (const { tabla } of TABLAS_EXPORTAR) {
+      if (!tablasSeleccionadas.has(tabla)) continue
+      const { data, error } = await supabase.from(tabla).select('*').eq('junta_id', juntaId)
+      if (error) {
+        erroresExport++
+        continue
+      }
+      descargarCSV(
+        (data ?? []) as Record<string, unknown>[],
+        `${tabla}_${new Date().toISOString().slice(0, 10)}`
+      )
+      // Small delay between downloads to avoid browser blocking multiple simultaneous downloads
+      await new Promise((r) => setTimeout(r, 300))
+    }
+
+    setExportando(false)
+    if (erroresExport === 0) {
+      setAlertaExport({
+        tipo: 'exito',
+        mensaje: `Se descargaron ${tablasSeleccionadas.size} archivo(s) CSV.`,
+      })
+    } else {
+      setAlertaExport({
+        tipo: 'error',
+        mensaje: `${erroresExport} tabla(s) no pudieron exportarse.`,
+      })
+    }
+    setTimeout(() => setAlertaExport(null), 4000)
   }
 
   if (cargando) {
@@ -316,6 +378,68 @@ export default function Configuracion() {
             </Boton>
           </div>
         </Formulario>
+      </div>
+
+      {/* ── Exportar datos ── */}
+      <div className="bg-white rounded-lg shadow p-6 mt-6">
+        <h2 className="text-lg font-semibold text-gray-900 mb-1">Exportar datos de la junta</h2>
+        <p className="text-sm text-gray-500 mb-4">
+          Descarga los datos de tu junta en formato CSV. Cada tabla se descarga como un archivo separado.
+        </p>
+
+        {alertaExport && (
+          <div className="mb-4">
+            <Alerta tipo={alertaExport.tipo} mensaje={alertaExport.mensaje} onCerrar={() => setAlertaExport(null)} />
+          </div>
+        )}
+
+        <div className="flex gap-4 mb-3 text-xs">
+          <button
+            type="button"
+            className="text-green-700 hover:underline"
+            onClick={() => setTablasSeleccionadas(new Set(TABLAS_EXPORTAR.map((t) => t.tabla)))}
+          >
+            Seleccionar todas
+          </button>
+          <button
+            type="button"
+            className="text-green-700 hover:underline"
+            onClick={() => setTablasSeleccionadas(new Set())}
+          >
+            Deseleccionar todas
+          </button>
+        </div>
+
+        <div className="grid grid-cols-2 gap-x-6 gap-y-2 mb-5">
+          {TABLAS_EXPORTAR.map(({ tabla, label }) => (
+            <label key={tabla} className="flex items-center gap-2 text-sm text-gray-700 cursor-pointer">
+              <input
+                type="checkbox"
+                className="accent-green-600"
+                checked={tablasSeleccionadas.has(tabla)}
+                onChange={(e) => {
+                  setTablasSeleccionadas((prev) => {
+                    const next = new Set(prev)
+                    if (e.target.checked) next.add(tabla)
+                    else next.delete(tabla)
+                    return next
+                  })
+                }}
+              />
+              {label}
+            </label>
+          ))}
+        </div>
+
+        <Boton
+          type="button"
+          variante="primario"
+          cargando={exportando}
+          disabled={exportando || tablasSeleccionadas.size === 0}
+          onClick={handleExportar}
+        >
+          Descargar CSV
+        </Boton>
       </div>
     </div>
   )

@@ -230,7 +230,7 @@ Cada tarea produce código funcional e integrado; no existe código huérfano. L
     - Marcar mensajes como leídos automáticamente al visualizarlos en la bandeja (RF-33.5).
   - _Requisitos: RF-33_
 
-- [ ] 28. RNF-03 — Exportación manual de datos (Administrador)
+- [x] 28. RNF-03 — Exportación manual de datos (Administrador)
   - Agregar en `src/pages/admin/Configuracion.tsx` un botón "Exportar datos de la junta".
   - Al hacer clic, consultar las tablas de negocio de la junta y generar archivos CSV descargables desde el navegador (RNF-03.2, RNF-03.3).
   - _Requisitos: RNF-03_
