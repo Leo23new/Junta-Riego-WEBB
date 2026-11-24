@@ -321,6 +321,28 @@
         "executionId": "79d68044-67b6-4ef3-af62-692f65d3d3ec",
         "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
         "timestamp": 1795481590811
+      },
+      {
+        "executionId": "a2a5a320-f8c9-4d6c-878e-d7b913ed4b42",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795482678176
+      },
+      {
+        "executionId": "a2a5a320-f8c9-4d6c-878e-d7b913ed4b42",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795482680684
+      }
+    ],
+    "27. RF-33 — Mensajería interna (Administrador / Miembro)": [
+      {
+        "executionId": "8cf0c975-b3ad-402f-81ca-3e38e4de6df5",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795482723831
+      },
+      {
+        "executionId": "8cf0c975-b3ad-402f-81ca-3e38e4de6df5",
+        "chatSessionId": "sess_dcf77651-c7ff-4671-98ae-4155f6cbc14f",
+        "timestamp": 1795482754040
       }
     ]
   }

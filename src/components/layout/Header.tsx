@@ -1,7 +1,9 @@
-import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { NavLink, useNavigate } from 'react-router-dom'
 import useAuth from '../../hooks/useAuth'
 import { useJunta } from '../../hooks/useJunta'
 import { signOut } from '../../lib/auth'
+import { supabase } from '../../lib/supabase'
 import { Rol } from '../../types'
 
 interface HeaderProps {
@@ -18,8 +20,43 @@ const rolConfig: Record<Rol, { label: string; clase: string }> = {
 
 export function Header({ onMenuToggle }: HeaderProps) {
   const navigate = useNavigate()
-  const { perfil, rol } = useAuth()
+  const { usuario, perfil, rol, juntaId } = useAuth()
   const { junta } = useJunta()
+  const [mensajesNoLeidos, setMensajesNoLeidos] = useState(0)
+
+  useEffect(() => {
+    if (!usuario || !juntaId) return
+
+    async function fetchNoLeidos() {
+      const { count } = await supabase
+        .from('mensajes')
+        .select('id', { count: 'exact', head: true })
+        .eq('destinatario_id', usuario!.id)
+        .eq('leido', false)
+        .eq('junta_id', juntaId!)
+      setMensajesNoLeidos(count ?? 0)
+    }
+
+    fetchNoLeidos()
+
+    const channel = supabase
+      .channel(`mensajes-unread-${usuario.id}`)
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'mensajes',
+          filter: `destinatario_id=eq.${usuario.id}`,
+        },
+        () => fetchNoLeidos()
+      )
+      .subscribe()
+
+    return () => {
+      supabase.removeChannel(channel)
+    }
+  }, [usuario, juntaId])
 
   async function handleSignOut() {
     await signOut()
@@ -75,6 +112,20 @@ export function Header({ onMenuToggle }: HeaderProps) {
             {rolInfo.label}
           </span>
         )}
+
+        {/* Mensajes no leídos */}
+        <NavLink
+          to="/mensajes"
+          className="relative p-1.5 text-gray-500 hover:text-green-700 transition-colors"
+          aria-label="Mensajes"
+        >
+          <span className="text-lg leading-none">✉</span>
+          {mensajesNoLeidos > 0 && (
+            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center font-medium">
+              {mensajesNoLeidos > 9 ? '9+' : mensajesNoLeidos}
+            </span>
+          )}
+        </NavLink>
 
         {/* Logout */}
         <button

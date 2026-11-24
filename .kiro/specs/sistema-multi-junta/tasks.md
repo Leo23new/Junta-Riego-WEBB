@@ -213,7 +213,7 @@ Cada tarea produce código funcional e integrado; no existe código huérfano. L
     - Archivo de actas filtrable por fecha y asamblea.
   - _Requisitos: RF-26_
 
-- [ ] 26. RF-29 — Comunicaciones externas (Secretario)
+- [x] 26. RF-29 — Comunicaciones externas (Secretario)
   - Crear `src/pages/secretario/Comunicaciones.tsx` con:
     - CRUD de comunicaciones externas: institución remitente, asunto, fecha de recepción, número de oficio, resumen.
     - Integrar `SubidaArchivo.tsx` para adjuntar documento PDF al bucket `comunicaciones-externas`.
@@ -221,7 +221,7 @@ Cada tarea produce código funcional e integrado; no existe código huérfano. L
     - Archivo filtrable por institución, asunto y rango de fechas.
   - _Requisitos: RF-29_
 
-- [ ] 27. RF-33 — Mensajería interna (Administrador / Miembro)
+- [x] 27. RF-33 — Mensajería interna (Administrador / Miembro)
   - Crear `src/pages/compartido/Mensajes.tsx` con:
     - Bandeja de entrada (mensajes recibidos) y salida (mensajes enviados).
     - Formulario de redacción con selector de destinatario (usuario de la misma junta), asunto y cuerpo.

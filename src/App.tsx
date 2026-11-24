@@ -26,13 +26,11 @@ import MisPagos from './pages/miembro/MisPagos'
 import MisMultas from './pages/miembro/MisMultas'
 import MisPredios from './pages/miembro/MisPredios'
 import Convocatorias from './pages/miembro/Convocatorias'
+import Mensajes from './pages/compartido/Mensajes'
 import ConvocatoriasSecretario from './pages/secretario/Convocatorias'
 import Actas from './pages/secretario/Actas'
 import Comunicaciones from './pages/secretario/Comunicaciones'
 
-const Placeholder = ({ titulo }: { titulo: string }) => (
-  <div className="p-8 text-gray-500">{titulo} — próximamente</div>
-)
 
 function App() {
   return (
@@ -101,7 +99,7 @@ function App() {
         {/* Mensajes (any authenticated user) */}
         <Route element={<ProtectedRoute />}>
           <Route element={<AppShell />}>
-            <Route path="/mensajes" element={<Placeholder titulo="Mensajes" />} />
+            <Route path="/mensajes" element={<Mensajes />} />
           </Route>
         </Route>
 
